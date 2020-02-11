@@ -86,6 +86,7 @@ class ConvertPageBuilderToJson
      */
     private function getDefaultRow(string $html)
     {
+        $style = "border-style: none; border-width: 1px; border-radius: 0px; margin: 0px; padding: 0px;";
         return [
             [
                 'data-content-type' => 'row',
@@ -93,7 +94,7 @@ class ConvertPageBuilderToJson
                 'items' => [
                     [
                         'data-content-type' => 'html',
-                        "style" => "border-style: none; border-width: 1px; border-radius: 0px; margin: 0px; padding: 0px;",
+                        "style" => $style,
                         'value' => $html,
                     ],
                 ],

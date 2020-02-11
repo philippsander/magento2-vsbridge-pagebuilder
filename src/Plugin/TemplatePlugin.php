@@ -54,6 +54,7 @@ class TemplatePlugin
      */
     public function updateContentHtml(string $content)
     {
+        // @codingStandardsIgnoreStart
         $content = str_replace(
             "href=\"{{widget type='Magento\Catalog\Block\Product\Widget\Link",
             "link_value=\"{{widget type='Divante\VsbridgePageBuilder\Block\Product\Widget\Link",
@@ -101,6 +102,7 @@ class TemplatePlugin
             "Divante_VsbridgePageBuilder::widget/static_block/default.phtml",
             $content
         );
+        // @codingStandardsIgnoreEnd
 
         return $content;
     }

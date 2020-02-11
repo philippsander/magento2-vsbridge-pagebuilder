@@ -13,11 +13,13 @@
   ],
   "version": "1.0.0",
   "require": {
-    "php": ">=7.0.2"
-  },
-  "require": {
     "php": ">=7.0.2",
     "divante/magento2-vsbridge-indexer": ">=1.1.0"
+  },
+  "require-dev": {
+    "magento/framework": "101.0.*",
+    "phpunit/phpunit": "^6.5",
+    "squizlabs/php_codesniffer": "^3.2"
   },
   "repositories": {
     "magento": {
@@ -32,6 +34,20 @@
     "psr-4": {
       "Divante\\VsbridgePageBuilder\\": "/src"
     }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Divante\\VsbridgePageBuilder\\": "/tests"
+    }
+  },
+  "scripts": {
+    "check": [
+      "@cs-check",
+      "@test"
+    ],
+    "cs-check": "./vendor/bin/phpcs --standard=PSR2 ./src ./tests",
+    "cs-fix": "vendor/bin/phpcbf --standard=PSR2 ./src ./tests",
+    "test": "vendor/bin/phpunit"
   },
   "minimum-stability": "dev",
   "prefer-stable": true
