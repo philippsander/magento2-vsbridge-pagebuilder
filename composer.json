@@ -19,6 +19,12 @@
     "php": ">=7.0.2",
     "divante/magento2-vsbridge-indexer": ">=1.1.0"
   },
+  "repositories": {
+    "magento": {
+      "type": "composer",
+      "url": "https://repo.magento.com"
+    }
+  },
   "autoload": {
     "files": [
       "src/registration.php"
