@@ -52,12 +52,21 @@ class Slider implements RendererInterface
 
         /** @var \DOMElement $slideNode */
         foreach ($node->childNodes as $slideNode) {
+            if (!($slideNode instanceof \DOMElement)) {
+                continue;
+            }
+
             $contentType = $this->attributeProcessor->getContentType($slideNode);
             $render = $this->childrenRendererPool->getRenderer($contentType);
 
             if ($render) {
                 $slideSettings = $render->toArray($domDocument, $slideNode);
                 $linkNode = $slideNode->firstChild;
+
+                if (!($linkNode instanceof \DOMElement)) {
+                    continue;
+                }
+
                 $linkRender = $this->childrenRendererPool->getRenderer(
                     $this->attributeProcessor->getAttributeValue($linkNode, 'data-element')
                 );

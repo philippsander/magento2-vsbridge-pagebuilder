@@ -54,13 +54,16 @@ class Banner implements RendererInterface
         if ($render) {
             $bannerSettings = $render->toArray($domDocument, $node);
             $linkNode = $node->firstChild;
-            $linkRender = $this->childrenRendererPool->getRenderer(
-                $this->attributeProcessor->getAttributeValue($linkNode, 'data-element')
-            );
 
-            if ($linkRender) {
-                $settings = $linkRender->toArray($domDocument, $linkNode);
-                $bannerSettings['link_settings'] = $settings['link_settings'];
+            if ($linkNode instanceof \DOMElement) {
+                $linkRender = $this->childrenRendererPool->getRenderer(
+                    $this->attributeProcessor->getAttributeValue($linkNode, 'data-element')
+                );
+
+                if ($linkRender) {
+                    $settings = $linkRender->toArray($domDocument, $linkNode);
+                    $bannerSettings['link_settings'] = $settings['link_settings'];
+                }
             }
 
             $item['banner_settings'] = $bannerSettings;

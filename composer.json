@@ -32,12 +32,12 @@
       "src/registration.php"
     ],
     "psr-4": {
-      "Divante\\VsbridgePageBuilder\\": "/src"
+      "Divante\\VsbridgePageBuilder\\": "./src"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Divante\\VsbridgePageBuilder\\": "/tests"
+      "Divante\\VsbridgePageBuilder\\": "./tests"
     }
   },
   "scripts": {
