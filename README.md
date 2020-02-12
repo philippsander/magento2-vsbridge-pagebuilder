@@ -1,5 +1,7 @@
 # PageBuilder addon for Vue Storefront & Magento 2 
 
+![PHP Composer](https://github.com/philippsander/magento2-vsbridge-pagebuilder/workflows/PHP%20Composer/badge.svg)
+
 ## Overview
 Addition for [divante/magento2-vsbridge-indexer](https://github.com/DivanteLtd/magento2-vsbridge-indexer) module.
 It will convert content build with PageBuilder to json structure: cms page, cms block and product/category attribute build with pagebuilder (e.g. description)
