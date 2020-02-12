@@ -11,8 +11,6 @@ jobs:
         os: [ubuntu-latest, macOS-latest]
     steps:
       - uses: actions/checkout@v1
-      - env:
-          COMPOSER_AUTH: ${{secrets.COMPOSER_AUTH}}
 
       # Setup PHP environment.
       # Docs: https://github.com/shivammathur/setup-php/blob/master/README.md
@@ -38,6 +36,8 @@ jobs:
         run: composer validate
 
       - name: Install dependencies
+        env:
+          COMPOSER_AUTH: ${{secrets.COMPOSER_AUTH}}
         run: composer install --prefer-dist --no-progress --no-suggest
 
 
