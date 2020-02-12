@@ -8,9 +8,11 @@ jobs:
     strategy:
       matrix:
         php-versions: ['7.1', '7.2', '7.3']
-        os: [ubuntu-latest, windows-latest, macOS-latest]
+        os: [ubuntu-latest, macOS-latest]
     steps:
       - uses: actions/checkout@v1
+      - env:
+          COMPOSER_AUTH: ${{secrets.COMPOSER_AUTH}}
 
       # Setup PHP environment.
       # Docs: https://github.com/shivammathur/setup-php/blob/master/README.md
